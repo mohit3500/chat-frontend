@@ -4,7 +4,7 @@ import { BiPowerOff } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const LogoutRoute = 'http://localhost:3500/api/logout';
+const LogoutRoute = 'https://mern-chat-app-api-fskm.onrender.com/api/logout';
 
 const Button = styled.div`
   display: flex;
