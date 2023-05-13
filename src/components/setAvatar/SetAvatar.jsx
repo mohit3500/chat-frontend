@@ -100,7 +100,7 @@ const SetAvatar = () => {
   useEffect(() => {
     const fetchApi = async () => {
       const data = [];
-      for (let i = 0; i < 1; i++) {
+      for (let i = 0; i < 4; i++) {
         const image = await axios.get(
           `${api}/${Math.round(Math.random() * 1000)}`
         );
