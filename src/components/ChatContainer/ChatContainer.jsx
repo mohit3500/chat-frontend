@@ -5,8 +5,8 @@ import ChatInput from '../ChatInput/ChatInput';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
-const getMessageRoute = 'http://localhost:3500/api/message/getMessage';
-const addMessageRoute = 'http://localhost:3500/api/message/addMessage';
+const getMessageRoute = 'https://mern-chat-app-api-fskm.onrender.com/api/message/getMessage';
+const addMessageRoute = 'https://mern-chat-app-api-fskm.onrender.com/api/message/addMessage';
 
 const Container = styled.div`
   display: grid;

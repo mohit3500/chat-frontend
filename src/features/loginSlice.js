@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const PostURL = 'http://localhost:3500/api';
+const PostURL = 'https://mern-chat-app-api-fskm.onrender.com/api';
 
 export const loginUser = createAsyncThunk(
   'login',

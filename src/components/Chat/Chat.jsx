@@ -7,7 +7,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { io } from 'socket.io-client';
 
-const host = 'http://localhost/3500';
+const host = 'https://mern-chat-app-api-fskm.onrender.com';
 
 const Container = styled.div`
   height: 100vh;
@@ -32,7 +32,7 @@ const Container = styled.div`
 
 const Chat = () => {
   const navigate = useNavigate();
-  const allUsersRoute = 'http://localhost:3500/api/getAllUsers';
+  const allUsersRoute = 'https://mern-chat-app-api-fskm.onrender.com/api/getAllUsers';
   const socket = useRef();
   const [contacts, setContacts] = useState([]);
   const [currentChat, setCurrentChat] = useState(undefined);
