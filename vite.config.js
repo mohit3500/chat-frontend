@@ -12,4 +12,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['uuid'],
   },
+  build: {
+    chunkSizeWarningLimit: 500000,
+  },
 });
