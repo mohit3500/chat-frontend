@@ -62,7 +62,7 @@ const Container = styled.div`
 
 const SetAvatar = () => {
   const api = `https://api.multiavatar.com/4645646`;
-  const apiRoute = 'http://localhost:3500/api/setAvatar';
+  const apiRoute = 'https://mern-chat-app-api-fskm.onrender.com/api/setAvatar';
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
