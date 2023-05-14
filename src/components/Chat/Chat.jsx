@@ -5,9 +5,9 @@ import Welcome from '../Welcome/Welcome';
 import ChatContainer from '../ChatContainer/ChatContainer';
 import axios from 'axios';
 import styled from 'styled-components';
-// import { io } from 'socket.io-client';
+import { io } from 'socket.io-client';
 
-// const host = 'https://mern-chat-app-api-fskm.onrender.com';
+const host = 'https://mern-chat-app-api-fskm.onrender.com';
 
 const Container = styled.div`
   height: 100vh;
@@ -47,12 +47,12 @@ const Chat = () => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (currentUser) {
-  //     socket.current = io(host);
-  //     socket.current.emit('add-user', currentUser._id);
-  //   }
-  // }, [currentUser]);
+  useEffect(() => {
+    if (currentUser) {
+      socket.current = io(host);
+      socket.current.emit('add-user', currentUser._id);
+    }
+  }, [currentUser]);
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
@@ -81,7 +81,7 @@ const Chat = () => {
         {currentChat === undefined ? (
           <Welcome />
         ) : (
-          <ChatContainer currentChat={currentChat} />
+          <ChatContainer currentChat={currentChat} socket={socket} />
         )}
       </div>
     </Container>

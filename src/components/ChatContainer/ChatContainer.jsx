@@ -83,7 +83,7 @@ const Container = styled.div`
   }
 `;
 
-const ChatContainer = ({ currentChat }) => {
+const ChatContainer = ({ currentChat , socket}) => {
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
   const [arrivalMessage, setArrivalMessage] = useState(null);
@@ -122,13 +122,13 @@ const ChatContainer = ({ currentChat }) => {
     setMessages(msgs);
   };
 
-  // useEffect(() => {
-  //   if (socket.current) {
-  //     socket.current.on('msg-receive', (msg) => {
-  //       setArrivalMessage({ fromSelf: false, message: msg });
-  //     });
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (socket.current) {
+      socket.current.on('msg-receive', (msg) => {
+        setArrivalMessage({ fromSelf: false, message: msg });
+      });
+    }
+  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
